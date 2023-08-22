@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     var cards = document.getElementsByClassName("card");
     var total = 0;
+    var tot = 0;
     var itemsList = [];
     var reset = false;
     var couponBtn = document.getElementsByClassName("cpn")[0];
@@ -57,9 +58,10 @@ document.addEventListener("DOMContentLoaded", function() {
             couponBtn.addEventListener("click", function() {
 
                 if (inputField.value === "SELL200") {
+                    tot = total
                     disc = total;
-                    total *= 0.8; 
-                    disc -= total;
+                    tot *= 0.8; 
+                    disc -= tot;
                     total_s = total - disc;
                     updateTotal();
                     document.getElementById("discount").innerText = disc.toFixed(2) + "TK";
